@@ -15,6 +15,9 @@ function Routes() {
         render={(props) => (
           <Layout {...props} activeIndex={activeIndex} setActiveIndex={setActiveIndex} pageData={pageData} setPageData={setPageData}>
             <Switch>
+              <Route exact path="/">
+                <Redirect to="/marketing" />
+              </Route>
               <Route path='/marketing' exact render={(props) => <DetailPage {...props} activeIndex={activeIndex} setActiveIndex={setActiveIndex} pageData={pageData} setPageData={setPageData} />} />
               <Route path='/finance' render={(props) => <DetailPage {...props} activeIndex={activeIndex} setActiveIndex={setActiveIndex} pageData={pageData} setPageData={setPageData} />} />
               <Route path='/personnel' render={(props) => <DetailPage {...props} activeIndex={activeIndex} setActiveIndex={setActiveIndex} pageData={pageData} setPageData={setPageData} />} />
